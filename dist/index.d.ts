@@ -157,4 +157,3 @@ export declare function createSaveUI<T>(saveManager: SaveStateManager<T>, getSta
     loadBtn: HTMLButtonElement;
 } | null;
 export default SaveStateManager;
-//# sourceMappingURL=index.d.ts.map

@@ -1,6 +1,6 @@
 {
   "name": "game-save-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "LocalStorage-based game save state manager with Set/Map serialization and optional toast UI",
   "main": "./dist/index.js",
@@ -15,7 +15,8 @@
     "build": "tsc",
     "check": "tsc --noEmit",
     "dev": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepack": "npm run build",
+    "test": "npm run build && node --test test/*.test.mjs"
   },
   "keywords": [
     "game",
@@ -31,19 +32,15 @@
   ],
   "author": "Luke Steuber <luke@lukesteuber.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lukeslp/game-save-state"
-  },
-  "homepage": "https://github.com/lukeslp/game-save-state#readme",
   "bugs": {
-    "url": "https://github.com/lukeslp/game-save-state/issues"
+    "email": "luke@lukesteuber.com"
   },
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "dist",
+    "dist/index.js",
+    "dist/index.d.ts",
     "README.md",
     "LICENSE"
   ],

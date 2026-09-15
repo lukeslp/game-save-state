@@ -2,20 +2,27 @@
 
 LocalStorage save manager with automatic Set/Map serialization.
 
-**Zero dependencies. TypeScript-first. ~3KB minified.**
+Zero runtime dependencies. Includes TypeScript declarations. Requires browser
+`localStorage`; optional buttons and notifications also require the DOM.
 
 ## Installation
 
+This package is distributed separately from its private development repository.
+The previous npm release was unpublished; no registry version is available as
+of September 15, 2026. If you have the package archive, install it in your project:
+
 ```bash
-npm install game-save-state
+npm install /path/to/game-save-state-1.0.1.tgz
 ```
+
+The imports below work with the installed archive. A local archive does not
+require access to the development repository. Questions or bug reports:
+[luke@lukesteuber.com](mailto:luke@lukesteuber.com).
 
 ## Quick Start
 
 ```typescript
 import { SaveStateManager } from 'game-save-state';
-
-const saveManager = new SaveStateManager('my-game');
 
 // Save state (handles Set/Map automatically)
 const gameState = {
@@ -25,6 +32,7 @@ const gameState = {
   upgrades: new Map([['attack', 3], ['defense', 2]]),
 };
 
+const saveManager = new SaveStateManager<typeof gameState>('my-game');
 saveManager.save(gameState);
 
 // Load
@@ -158,7 +166,5 @@ createSaveUI(
 ## License
 
 MIT
-
-Battle-tested across 10+ browser games at [dr.eamer.dev/games](https://dr.eamer.dev/games)
 
 —Luke Steuber ([@lukesteuber](https://bsky.app/profile/lukesteuber.com))

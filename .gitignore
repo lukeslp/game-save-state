@@ -1,7 +1,8 @@
-node_modules/\ndist/\n*.tgz
 node_modules/
+dist/
+*.tgz
 
-# AI tooling cruft
+# Development files
 .claude/
 CLAUDE.md
 GEMINI.md

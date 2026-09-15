@@ -361,7 +361,9 @@ export function createSaveUI<T>(
   const saveBtn = document.createElement('button');
   saveBtn.innerHTML = '💾 Save';
   saveBtn.setAttribute('aria-label', 'Save game');
-  saveBtn.onclick = () => saveManager.save(getState());
+  saveBtn.onclick = () => {
+    if (saveManager.save(getState())) loadBtn.disabled = false;
+  };
 
   const loadBtn = document.createElement('button');
   loadBtn.innerHTML = '📂 Load';

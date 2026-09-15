@@ -275,7 +275,10 @@ export function createSaveUI(saveManager, getState, setState, container) {
     const saveBtn = document.createElement('button');
     saveBtn.innerHTML = '💾 Save';
     saveBtn.setAttribute('aria-label', 'Save game');
-    saveBtn.onclick = () => saveManager.save(getState());
+    saveBtn.onclick = () => {
+        if (saveManager.save(getState()))
+            loadBtn.disabled = false;
+    };
     const loadBtn = document.createElement('button');
     loadBtn.innerHTML = '📂 Load';
     loadBtn.setAttribute('aria-label', 'Load game');
@@ -296,4 +299,3 @@ export function createSaveUI(saveManager, getState, setState, container) {
 }
 // Default export for convenience
 export default SaveStateManager;
-//# sourceMappingURL=index.js.map
