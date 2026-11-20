@@ -7,19 +7,14 @@ Zero runtime dependencies. Includes TypeScript declarations. Requires browser
 
 ## Installation
 
-```bash
-npm install game-save-state
-```
-
-If you have the versioned package archive, you can also install it directly:
+The package is not on the npm registry. Install it from this repository:
 
 ```bash
-npm install /path/to/game-save-state-1.0.1.tgz
+npm install github:lukeslp/game-save-state
 ```
 
-Both installation methods use the imports below and require no access to the
-private development repository. Questions or bug reports:
-[luke@lukesteuber.com](mailto:luke@lukesteuber.com).
+npm builds the TypeScript source during install. Bug reports and questions go to
+[issues](https://github.com/lukeslp/game-save-state/issues).
 
 ## Quick Start
 
@@ -169,4 +164,3 @@ createSaveUI(
 
 MIT
 
-—Luke Steuber ([@lukesteuber](https://bsky.app/profile/lukesteuber.com))
